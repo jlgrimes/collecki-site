@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collecki: scan your cards in a blink</title>
+<meta name="description" content="Collecki is an iPhone app that recognises your Pokémon cards with the camera, files them in binders, and tells you what your collection is worth.">
+<meta property="og:title" content="Collecki">
+<meta property="og:description" content="Scan your cards in a blink. Binders, daily market prices, all saved to your account.">
+<meta name="theme-color" content="#FDFCFA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1C1E" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap" rel="stylesheet">
+<style>
+  /* Palette is the app icon's: its coral, its charcoal, its off-white. */
+  :root { --paper:#FDFCFA; --ink:#3A3A3C; --soft:#6C6C71; --coral:#F56A78; --blush:#FCE9EB; --line:#3A3A3C24; }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper:#1C1C1E; --ink:#FDFCFA; --soft:#A1A1A6; --blush:#2F2426; --line:#FDFCFA2E; }
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--paper); color:var(--ink); font:400 1.125rem/1.55 "Bricolage Grotesque", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 24px; }
+
+  .name { padding:28px 0; font-weight:700; font-size:1.25rem; letter-spacing:-.01em; }
+
+  .hero { display:grid; grid-template-columns:1.25fr .75fr; gap:48px; align-items:center; padding:clamp(32px,7vw,96px) 0 clamp(56px,9vw,120px); }
+  h1 { font-size:clamp(2.75rem,7.4vw,5.75rem); line-height:.95; letter-spacing:-.035em; font-weight:700; text-wrap:balance; }
+  .hero p { max-width:34ch; margin-top:28px; font-size:1.3rem; line-height:1.45; color:var(--soft); }
+  .hero .soon { margin-top:36px; font-size:1rem; font-weight:600; color:var(--ink); }
+  .hero .soon span { display:block; font-weight:400; color:var(--soft); }
+  .icon { width:100%; max-width:320px; justify-self:end; filter:drop-shadow(0 28px 36px rgb(245 106 120 / .32)); }
+
+  /* Each feature is laid out like a trading card: name, art window, text. */
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; list-style:none; padding:0; }
+  .card { display:flex; flex-direction:column; gap:12px; aspect-ratio:5/7; padding:16px; border:1px solid var(--line); border-radius:20px; }
+  .card h2 { font-size:1.5rem; line-height:1.1; letter-spacing:-.02em; font-weight:700; padding:2px 4px 0; }
+  .card svg { flex:1; min-height:0; width:100%; background:var(--blush); border-radius:10px; color:var(--ink); }
+  .card p { padding:0 4px 4px; font-size:1rem; line-height:1.45; color:var(--soft); }
+
+  .sync { padding:clamp(56px,9vw,120px) 0; max-width:22ch; font-size:clamp(1.6rem,3.6vw,2.5rem); line-height:1.1; letter-spacing:-.025em; font-weight:700; text-wrap:balance; }
+  footer { padding:24px 0 40px; border-top:1px solid var(--line); font-size:.875rem; color:var(--soft); }
+
+  @media (max-width:760px) {
+    .hero { grid-template-columns:1fr; gap:32px; }
+    .icon { order:-1; max-width:132px; justify-self:start; }
+    .cards { grid-template-columns:1fr; }
+    .card { aspect-ratio:auto; }
+    .card svg { flex:none; aspect-ratio:16/10; }
+  }
+
+  /* The one bit of motion: the icon's ring draws itself on load. */
+  @media (prefers-reduced-motion: no-preference) {
+    .ring { stroke-dasharray:.6 1; animation:ring .9s .25s cubic-bezier(.3,.7,.2,1) backwards; }
+    @keyframes ring { from { stroke-dashoffset:.6; } }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="name">Collecki</header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Scan your cards in a blink.</h1>
+        <p>Collecki recognises a Pokémon card the moment your camera sees it, files it in a binder, and tells you what your collection is worth.</p>
+        <!-- shortcut: no App Store link yet; swap this for a download button once the app is live -->
+        <p class="soon">Coming soon to the App Store. <span>For iPhone, iOS 17 or later.</span></p>
+      </div>
+      <svg class="icon" viewBox="0 0 1024 1024" role="img" aria-label="Collecki app icon">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8808C"/><stop offset="1" stop-color="#F25A6A"/></linearGradient>
+          <clipPath id="sq"><rect width="1024" height="1024" rx="230"/></clipPath>
+        </defs>
+        <g clip-path="url(#sq)">
+          <rect width="1024" height="1024" fill="url(#g)"/>
+          <g transform="translate(478 500) rotate(-29) scale(0.95)" fill="#3A3A3C">
+            <ellipse cx="-172" cy="0" rx="88" ry="96"/>
+            <ellipse cx="172" cy="0" rx="88" ry="96"/>
+            <ellipse cx="0" cy="162" rx="93" ry="76"/>
+            <polygon points="0,202 90,359 -90,359" stroke="#3A3A3C" stroke-width="52" stroke-linejoin="round"/>
+          </g>
+          <!-- rotated so the stroke starts off-canvas and draws through the visible corner -->
+          <circle class="ring" cx="185" cy="38" r="241" pathLength="1" transform="rotate(-30 185 38)" fill="none" stroke="#FDFCFA" stroke-width="117"/>
+        </g>
+      </svg>
+    </section>
+
+    <ul class="cards">
+      <li class="card">
+        <h2>Scan</h2>
+        <svg viewBox="0 0 160 110" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="62" y="30" width="36" height="50" rx="4" stroke="currentColor" stroke-width="3"/>
+          <path d="M46 34V22h12M102 22h12v12M114 76v12h-12M58 88H46V76" stroke="var(--coral)" stroke-width="4"/>
+        </svg>
+        <p>Point your camera at a card. Collecki knows which one it is and adds it. No typing, no searching.</p>
+      </li>
+      <li class="card">
+        <h2>Binders</h2>
+        <svg viewBox="0 0 160 110" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="50" y="22" width="60" height="66" rx="6" stroke="currentColor" stroke-width="3"/>
+          <path d="M66 22v66" stroke="currentColor" stroke-width="3"/>
+          <path d="M58 38h16M58 55h16M58 72h16" stroke="var(--coral)" stroke-width="5"/>
+        </svg>
+        <p>Group cards the way a real binder does. Take a photo of yours and it becomes the cover.</p>
+      </li>
+      <li class="card">
+        <h2>Worth</h2>
+        <svg viewBox="0 0 160 110" aria-hidden="true">
+          <text x="44" y="67" font-size="36" font-weight="700" fill="currentColor">$</text>
+          <g fill="var(--coral)"><circle cx="78" cy="56" r="6"/><circle cx="96" cy="56" r="6"/><circle cx="114" cy="56" r="6"/></g>
+        </svg>
+        <p>Market prices, refreshed daily, for every card and binder. Hide them when someone is looking.</p>
+      </li>
+    </ul>
+
+    <p class="sync">Sign in with Apple and every card is saved to your account.</p>
+  </main>
+
+  <footer>© 2026 Collecki. Not affiliated with, endorsed or sponsored by Nintendo, Game Freak or The Pokémon Company.</footer>
+</div>
+</body>
+</html>
