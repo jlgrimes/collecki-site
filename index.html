@@ -60,6 +60,7 @@
   .soon a { color:var(--ink); font-weight:600; text-decoration:underline var(--coral) 2px; text-underline-offset:4px; }
   .soon a:focus-visible { outline:3px solid var(--coral); outline-offset:2px; border-radius:4px; }
   footer { padding:24px 0 40px; border-top:1px solid var(--line); font-size:.875rem; color:var(--soft); }
+  footer a { display:block; width:fit-content; margin-bottom:8px; color:inherit; }
 
   @media (max-width:760px) {
     .hero { grid-template-columns:1fr; gap:32px; }
@@ -143,7 +144,7 @@
     </section>
   </main>
 
-  <footer>© 2026 Collecki. Not affiliated with, endorsed or sponsored by Nintendo, Game Freak or The Pokémon Company.</footer>
+  <footer><a href="/help">Help</a>© 2026 Collecki. Not affiliated with, endorsed or sponsored by Nintendo, Game Freak or The Pokémon Company.</footer>
 </div>
 <script>
   // Sign-ups go to the app's Supabase project through join_beta (scandile/supabase/beta_signups.sql),

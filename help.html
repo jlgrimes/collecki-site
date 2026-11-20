@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collecki help</title>
+<meta name="description" content="How to scan cards, use binders and read prices in Collecki, and how to reach support.">
+<meta name="theme-color" content="#FDFCFA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1C1E" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap" rel="stylesheet">
+<style>
+  /* Same palette and type as index.html. */
+  :root { --paper:#FDFCFA; --ink:#3A3A3C; --soft:#6C6C71; --coral:#F56A78; --line:#3A3A3C24; }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper:#1C1C1E; --ink:#FDFCFA; --soft:#A1A1A6; --line:#FDFCFA2E; }
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--paper); color:var(--ink); font:400 1.125rem/1.55 "Bricolage Grotesque", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:680px; margin:0 auto; padding:0 24px; }
+  a { color:var(--ink); font-weight:600; text-decoration:underline var(--coral) 2px; text-underline-offset:4px; }
+  a:focus-visible { outline:3px solid var(--coral); outline-offset:2px; border-radius:4px; }
+
+  .name { padding:28px 0; font-size:1.25rem; letter-spacing:-.01em; }
+  .name a { font-weight:700; text-decoration:none; }
+
+  h1 { padding-top:clamp(32px,7vw,72px); font-size:clamp(2.5rem,6.2vw,4rem); line-height:.95; letter-spacing:-.035em; font-weight:700; }
+  .contact { margin-top:24px; font-size:1.3rem; line-height:1.45; color:var(--soft); }
+
+  .answers { padding:clamp(40px,7vw,72px) 0; }
+  .answers h2 { margin-top:36px; padding-top:28px; border-top:1px solid var(--line); font-size:1.5rem; line-height:1.15; letter-spacing:-.02em; font-weight:700; }
+  .answers p { margin-top:10px; color:var(--soft); }
+
+  footer { padding:24px 0 40px; border-top:1px solid var(--line); font-size:.875rem; color:var(--soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="name"><a href="/">Collecki</a></header>
+
+  <main>
+    <h1>Help</h1>
+    <p class="contact">Something not working, or a question this page doesn’t answer? Email <a href="mailto:help@collecki.com">help@collecki.com</a>.</p>
+
+    <section class="answers">
+      <h2>Scanning a card</h2>
+      <p>Open the Capture tab and hold a card inside the outline. Collecki recognises it and saves it; there is nothing to tap.</p>
+
+      <h2>It saved the wrong printing</h2>
+      <p>Tap the card in the row under the camera and pick the right printing. You can delete the card from there too.</p>
+
+      <h2>Putting cards in a binder</h2>
+      <p>In the Binders tab, tap the plus button to make a binder, and take a photo of the real one if you like. To fill it, choose it under “Scan to” at the top of the Capture tab so new scans go straight in, or open the binder and tap the plus button to add cards you have already scanned.</p>
+
+      <h2>Removing a card</h2>
+      <p>Press and hold a card. In the Cards tab you can delete it; inside a binder you can take it out of the binder, and it stays in your collection.</p>
+
+      <h2>Where prices come from</h2>
+      <p>They are market prices from TCGdex, refreshed daily. Collecki can’t tell a card’s finish, so it uses the price of the plainest printing. A price marked ≈ is a European price converted from euros.</p>
+
+      <h2>Hiding prices</h2>
+      <p>Turn on Sensitive mode in Settings. Every digit of a price is shown as a dot.</p>
+
+      <h2>Where your cards are saved</h2>
+      <p>On your phone, and backed up to the account you sign in to with Apple. Settings shows whether everything is backed up.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Collecki. Not affiliated with, endorsed or sponsored by Nintendo, Game Freak or The Pokémon Company.</footer>
+</div>
+</body>
+</html>
